@@ -1,0 +1,7 @@
+node_modules/
+*.gguf
+*.log
+.env
+bench/results/*.tmp
+.DS_Store
+__pycache__/

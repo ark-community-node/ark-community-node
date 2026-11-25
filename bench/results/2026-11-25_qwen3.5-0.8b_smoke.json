@@ -1,0 +1,70 @@
+{
+  "summary": {
+    "model": "offline-llm",
+    "endpoint": "http://127.0.0.1:11434",
+    "data": "sw_seed.jsonl",
+    "at": "2026-11-25T05:25:49.241610+00:00",
+    "items": 10,
+    "errors": 10,
+    "keyword_pass_rate": null,
+    "reviewed_items": 0,
+    "note": "keyword pass rate is a floor check, not a quality score",
+    "model_file": "Qwen3.5-0.8B-Q4_K_M.gguf",
+    "runtime": "QVAC serve (llama.cpp), Apple M-series Mac",
+    "max_tokens": 1500,
+    "status": "SMOKE TEST on unreviewed draft items. Not a publishable score.",
+    "finding": "0/10 Swahili prompts produced a final answer within 1500 tokens: the model loops in its reasoning (e.g. mistranslates 'wiki' (week) as 'books' and repeats). Disabling thinking via enable_thinking=false, reasoning_effort=none and /no_think had no effect on this runtime. The same model answers short English arithmetic correctly ('3 x 160' -> 480). Conclusion: sub-1B reasoning models are not usable for Swahili as configured. This is exactly the gap the benchmark and fine-tune milestones target."
+  },
+  "results": [
+    {
+      "id": "sw-agri-001",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-agri-002",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-health-001",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-health-002",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-school-001",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-school-002",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-money-001",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-money-002",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-letter-001",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    },
+    {
+      "id": "sw-letter-002",
+      "pass": false,
+      "error": "empty answer (finish_reason=length)"
+    }
+  ]
+}

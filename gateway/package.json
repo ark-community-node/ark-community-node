@@ -1,0 +1,9 @@
+{
+  "name": "ark-community-node-gateway",
+  "version": "0.1.0",
+  "description": "Local-network gateway and chat page for Ark Community Node",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.mjs", "test": "node --test test/*.test.mjs" }
+}

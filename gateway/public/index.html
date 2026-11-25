@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="sw"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ark Community Node</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;font-family:system-ui,sans-serif;background:#0b1220;color:#e8edf5;display:flex;flex-direction:column;height:100dvh}
+  header{padding:12px 16px;background:#111a2e;border-bottom:1px solid #1f2b45}
+  header b{color:#f7931a} header small{display:block;color:#8a97b0;margin-top:2px}
+  #log{flex:1;overflow-y:auto;padding:12px}
+  .m{max-width:88%;margin:8px 0;padding:10px 12px;border-radius:12px;white-space:pre-wrap;line-height:1.45}
+  .u{background:#1d3b6e;margin-left:auto}.a{background:#18233a}.e{background:#4a1d1d}
+  form{display:flex;gap:8px;padding:10px;background:#111a2e}
+  textarea{flex:1;border-radius:10px;border:1px solid #2a3858;background:#0b1220;color:#e8edf5;padding:10px;font-size:16px;resize:none}
+  button{background:#f7931a;color:#000;border:0;border-radius:10px;padding:0 16px;font-weight:600}
+</style></head><body>
+<header><b>Ark Community Node</b><small>Inafanya kazi bila intaneti · Works without internet. Maswali yako hayatoki hapa. Your questions stay on this box.</small></header>
+<div id="log"></div>
+<form id="f"><textarea id="q" rows="2" placeholder="Uliza swali... / Ask a question..."></textarea><button>Tuma</button></form>
+<script>
+const log=document.getElementById('log'),q=document.getElementById('q'),hist=[];
+const SYSTEM='You are a helpful assistant running offline on a community computer in Kenya. Answer briefly and clearly. Reply in the language the user writes in (Swahili or English).';
+function add(cls,t){const d=document.createElement('div');d.className='m '+cls;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+async function send(text){
+  hist.push({role:'user',content:text});add('u',text);const out=add('a','…');
+  const headers={'Content-Type':'application/json'};const code=sessionStorage.getItem('code');if(code)headers['x-access-code']=code;
+  const r=await fetch('/api/chat',{method:'POST',headers,body:JSON.stringify({messages:[{role:'system',content:SYSTEM},...hist.slice(-10)]})});
+  if(r.status===401){const c=prompt('Access code / Nambari ya kuingia');if(c){sessionStorage.setItem('code',c);hist.pop();log.lastChild.remove();log.lastChild.remove();return send(text)}}
+  if(!r.ok){out.className='m e';out.textContent=r.status===503?'Kuna foleni. Jaribu tena baada ya muda mfupi. / Busy, try again shortly.':'Hitilafu / Error '+r.status;hist.pop();return}
+  const rd=r.body.getReader(),dec=new TextDecoder();let buf='',ans='';out.textContent='';
+  for(;;){const{done,value}=await rd.read();if(done)break;buf+=dec.decode(value,{stream:true});
+    const lines=buf.split('\n');buf=lines.pop();
+    for(const l of lines){if(!l.startsWith('data:'))continue;const d=l.slice(5).trim();if(d==='[DONE]')continue;
+      try{const t=JSON.parse(d).choices?.[0]?.delta?.content;if(t){ans+=t;out.textContent=ans;log.scrollTop=log.scrollHeight}}catch{}}}
+  hist.push({role:'assistant',content:ans});
+}
+document.getElementById('f').onsubmit=e=>{e.preventDefault();const t=q.value.trim();if(t){q.value='';send(t)}};
+</script></body></html>
