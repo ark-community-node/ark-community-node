@@ -22,7 +22,8 @@ They need no data bundle and no app, and **no prompt ever leaves the room**.
 
 | Part | Path | State |
 |---|---|---|
-| Local gateway + mobile chat page | `gateway/` | ✅ Works with any OpenAI-compatible local runtime (llama.cpp server, Ollama, QVAC) |
+| Local gateway + mobile chat page | `gateway/` | ✅ Works with any OpenAI-compatible local runtime. **Reference runtime: [Mesh LLM](https://github.com/Mesh-LLM/mesh-llm)** (verified). llama.cpp, Ollama and QVAC also work |
+| Built on open infrastructure | `docs/SPIRAL_STACK.md` | Mesh LLM, LDK, Goose: what's verified vs planned |
 | Swahili benchmark harness | `bench/` | 🟡 Harness works; seed items are **drafts awaiting native-speaker review** |
 | Architecture | `docs/ARCHITECTURE.md` | ✅ |
 | Lightning metering (LDK Node, L402) | — | ⏳ Planned |
@@ -31,14 +32,17 @@ They need no data bundle and no app, and **no prompt ever leaves the room**.
 
 ## Quick start (any laptop)
 
-1. Run a local model with an OpenAI-compatible server, for example llama.cpp:
+1. Serve a local model with [Mesh LLM](https://github.com/Mesh-LLM/mesh-llm) (reference runtime):
    ```sh
-   llama-server -m your-model.gguf --host 127.0.0.1 --port 8080
+   mesh-llm analytics disable   # keep the box fully private
+   mesh-llm serve --local-model-only --gguf /absolute/path/model.gguf   # API on 127.0.0.1:9337
+   curl -s localhost:9337/v1/models   # copy the model id
    ```
+   Any OpenAI-compatible server works too, for example `llama-server -m model.gguf --port 8080`.
 2. Start the gateway:
    ```sh
    cd gateway
-   UPSTREAM=http://127.0.0.1:8080 node server.mjs
+   UPSTREAM=http://127.0.0.1:9337 MODEL=<model id> node server.mjs
    ```
 3. On a phone on the same Wi-Fi, open `http://<box-ip>:8088`.
 

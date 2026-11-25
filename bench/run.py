@@ -27,7 +27,23 @@ def ask(endpoint, model, prompt, timeout, max_tokens=1500):
     return content, time.time() - t0
 
 
+def degenerate(answer, prompt):
+    """Catch answers that would fool a keyword check: repetition loops or echoing the prompt."""
+    words = answer.lower().split()
+    if len(words) >= 12:
+        grams = [" ".join(words[i:i + 3]) for i in range(len(words) - 2)]
+        top = max(grams.count(g) for g in set(grams))
+        if top >= 4:
+            return "repetition loop"
+    p = prompt.lower().strip(" ?.!")
+    if len(p) > 20 and p[:40] in answer.lower():
+        return "echoes the prompt"
+    return None
+
+
 def check(answer, item):
+    if degenerate(answer, item["prompt"]):
+        return False
     keys = item.get("must_include_any") or []
     a = answer.lower()
     return any(k.lower() in a for k in keys) if keys else None
@@ -50,7 +66,7 @@ def main(argv=None):
     for it in items:
         try:
             ans, secs = ask(a.endpoint, a.model, it["prompt"], a.timeout, a.max_tokens)
-            rows.append({"id": it["id"], "pass": check(ans, it), "seconds": round(secs, 2), "answer": ans})
+            rows.append({"id": it["id"], "pass": check(ans, it), "degenerate": degenerate(ans, it["prompt"]), "seconds": round(secs, 2), "answer": ans})
         except Exception as e:  # keep going; record failure
             rows.append({"id": it["id"], "pass": False, "error": str(e)})
         print(it["id"], rows[-1].get("pass"), rows[-1].get("seconds"), file=sys.stderr)

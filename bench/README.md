@@ -27,3 +27,13 @@ Qwen3.5-0.8B (Q4_K_M) on QVAC/llama.cpp: **0 of 10 Swahili prompts produced an a
 "books" and repeating itself. The same model answers simple English arithmetic correctly.
 Raw output: `results/2026-11-25_qwen3.5-0.8b_smoke.json`. This is why the benchmark exists:
 tiny open models that look fine in English can fail completely in Swahili, and nobody publishes that.
+
+## Second result (25 Nov 2026): same model on Mesh LLM
+On **Mesh LLM v0.80.0** (Spiral's open runtime), the model's reasoning mode is switched off, so it
+answers **10/10 prompts** (up from 0/10 on QVAC). But reading the answers shows they are **not
+usable Swahili**: every one falls into a repetition loop ("mpya wa mpya wa mpya…") or echoes the
+question. A naive keyword check scored this run **40%**. With repetition and echo detection added
+(and checked against fluent Swahili controls that pass), the floor score is **0%**.
+
+**Lesson for anyone benchmarking African languages:** keyword checks badly overstate quality.
+Automatic checks need degeneracy detection, and the real score has to come from native speakers.

@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "model": "local-gguf/sha256-e52a430af452896a",
+    "endpoint": "http://127.0.0.1:9337",
+    "data": "sw_seed.jsonl",
+    "at": "2026-11-25T06:12:52.491550+00:00",
+    "items": 10,
+    "errors": 0,
+    "keyword_pass_rate": 0.0,
+    "reviewed_items": 0,
+    "note": "keyword pass rate is a floor check, not a quality score",
+    "keyword_pass_rate_before_degeneracy_check": 0.4,
+    "runtime": "Mesh LLM v0.80.0 --local-model-only (Skippy/llama.cpp, Metal), analytics disabled",
+    "model_file": "Qwen3.5-0.8B-Q4_K_M.gguf",
+    "max_tokens": 600,
+    "status": "SMOKE TEST on unreviewed draft items. Not a publishable score.",
+    "finding": "Mesh LLM's runtime disables this model's reasoning mode, so it now answers 10/10 instead of 0/10 (QVAC). But manual reading shows the Swahili answers are not usable: repetition loops and echoed prompts. The naive keyword check scored 40%; after adding repetition/echo detection, the true floor score is shown. Lesson: keyword checks overstate quality; native-speaker grading is required."
+  },
+  "results": [
+    {
+      "id": "sw-agri-001",
+      "pass": false,
+      "seconds": 22.86,
+      "answer": "Hii ni mchakato wa **Majani ya Mahindi** (Majani ya Mahindi ya Kipungu).\n\nHii ni mchakato wa **Majani ya Mahindi** (Majani ya Mahindi ya Kipungu) wa kitovu.\n\n**Mchakato wa Majani ya Mahindi ya Kipungu:**\n1.  **Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n2.  **Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n3.  **Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipungu.\n\n**Mchakato wa Majani ya Mahindi:** Hii ni mchakato wa majani ya mahindi ya kipung",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-agri-002",
+      "pass": false,
+      "seconds": 15.43,
+      "answer": "Mzuri wa kupanda maharagwe katika eneo la masika ni **mzuri wa kupanda maharagwe** (kwa kuwa mawazo wa masika hufuwa na maharagwe).\n\nHapa ni uhusiano wa kwanza kati ya mawazo huu:\n\n1.  **Mwongo wa Mawazo wa Masika:** Mawazo wa masika hufuwa na maharagwe. Kwa sababu hii, mawazo hufuwa na maharagwe kwa sababu ya **mawongo wa mawazo wa masika**.\n2.  **Mwongo wa Maharagwe:** Mawongo wa mawazo wa masika hufuwa na maharagwe. Kwa sababu hii, mawongo hufuwa na maharagwe kwa sababu ya **mawongo wa mawazo wa masika**.\n\nKwa sababu ya mawongo wa mawazo wa masika na mawongo wa maharagwe, mawongo wa mawazo wa masika hufuwa na maharagwe kwa sababu ya **mawongo wa mawongo wa mawazo wa masika**.\n\nHivyo, mawongo wa mawazo wa masika hufuwa na maharagwe kwa sababu ya **mawongo wa mawongo wa mawongo wa mawazo wa masika**.",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-health-001",
+      "pass": false,
+      "seconds": 23.65,
+      "answer": "Ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo ndiyo",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-health-002",
+      "pass": false,
+      "seconds": 31.87,
+      "answer": "Malaria ni mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa mpya wa m",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-school-001",
+      "pass": false,
+      "seconds": 29.35,
+      "answer": "Mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita, mwanafunzi wa darasa la sita,",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-school-002",
+      "pass": false,
+      "seconds": 27.66,
+      "answer": "Hapa ni uwezo wa kufanya kazi kwa kufanya mashambulishi ya kufanya shilingi.\n\nKwa sababu shilingi ya kila kilo ni **160**, hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni **160**. Hii inamaanisha kuwa shilingi ya kila kilo ni",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-money-001",
+      "pass": false,
+      "seconds": 7.31,
+      "answer": "Hii linaonko wa **kwa kiasi cha kwanza** (first-order) wa shilingi.\n\nKwa sababu, kila wiki anachangia shilingi 500. Kwa hiyo, kila wiki anachangia **1 shilingi** (500 / 12 = 41.67).\n\nKwa sababu, baada ya wiki 4, kila wiki anachangia **1 shilingi** (1 / 12 = 0.0833).\n\nKwa sababu, baada ya wiki 4, kila wiki anachangia **1 shilingi** (1 / 12 = 0.0833).\n\n**Jibu:** Baada ya wiki 4, kila wiki anachangia **1 shilingi**.",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-money-002",
+      "pass": false,
+      "seconds": 26.96,
+      "answer": "Nipe vidokezo vitatu vya kuweka akiba kwa mfanyabiashara mdogo sokoni (kwa kuwa kwenye mchakato wa kwanza, kama vile **kwanza wa kwanza** au **kwanza wa kwanza** kwa kwanza wa kwanza) ni mchakato wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwanza wa kwan",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-letter-001",
+      "pass": false,
+      "seconds": 31.1,
+      "answer": "Hii ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka) ambapo ni mchakato wa kazi ya **Niandikie** (Nikola).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa Duka** (Diploma in Duka).\n\nHii ni mchakato wa kazi ya **Niandikie** (Nikola) ambapo ni mchakato wa kazi ya **Mhudumu wa",
+      "degenerate": "repetition loop"
+    },
+    {
+      "id": "sw-letter-002",
+      "pass": false,
+      "seconds": 29.73,
+      "answer": "Mfupi wa kumjulisha mwalimu kuwa mtoto wangu ni mgonjwa na hatakuja shuleni leo.\n\nHii ni mchakato wa **mchakato wa mwalimu** (Teacher's Role) ambapo mwalimu wa mchakato wa mwalimu wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa mwanza wa m",
+      "degenerate": "repetition loop"
+    }
+  ]
+}
