@@ -37,3 +37,24 @@ question. A naive keyword check scored this run **40%**. With repetition and ech
 
 **Lesson for anyone benchmarking African languages:** keyword checks badly overstate quality.
 Automatic checks need degeneracy detection, and the real score has to come from native speakers.
+
+## Comparison (25 Nov 2026): three small open models on Mesh LLM, same 10 draft prompts
+
+| Model | Size (Q4_K_M) | Keyword floor check | Maintainer read: fully correct | Typical answer time (M-series Mac) |
+|---|---|---|---|---|
+| **MORENA 1.5B** (Vambo AI, Apache-2.0) | 0.9 GB | 80% | **4 / 10** | 1–5 s |
+| Gemma 3 1B | 0.8 GB | 10% | 0 / 10 | 3–20 s |
+| Qwen3.5 0.8B | 0.5 GB | 0% | 0 / 10 | 7–32 s |
+
+**What we learned:**
+- **MORENA writes fluent, on-topic Swahili.** No loops, no wrong language. That clearly sets it apart.
+- **Fluent isn't the same as correct.** MORENA got both money sums wrong (chama total: 8,000 or 72,000
+  instead of 24,000), named the wrong pest for maize damage, and once answered as the employer
+  instead of writing a job application. A keyword check says 80%. A careful read says 4/10 fully correct.
+- **Gemma 3 1B drifts into Indonesian and Tagalog** on Swahili prompts. The detector now flags wrong-language answers too.
+- **Runtime note:** on Mesh LLM v0.80.0, Gemma 3 1B returned HTTP 502 (`llama_decode failed rc=-3`)
+  whenever `temperature: 0` was sent, and the error persisted for later requests until restart.
+  Gemma was therefore run at the server's default temperature. MORENA scored the same 80% floor at
+  temperature 0 and at the default. Reported upstream as a candidate issue.
+
+The "maintainer read" is by the project team, **not** native-speaker review, and every note is in the results JSON (`maintainer_read`). Native-speaker grading replaces it in v0.1.

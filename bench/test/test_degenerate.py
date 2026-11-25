@@ -24,5 +24,15 @@ class T(unittest.TestCase):
         self.assertEqual(degenerate("Andika ujumbe mfupi wa kumjulisha mwalimu kuwa mtoto wangu ni mgonjwa. Sawa.", p), "echoes the prompt")
 
 
+class Lang(unittest.TestCase):
+    def test_indonesian_flagged(self):
+        a = "Berikut adalah cara menghitung total biaya: Harga satu kilo sukari 160, jumla 480"
+        self.assertEqual(degenerate(a, "swali"), "wrong language")
+
+    def test_swahili_with_yang_free(self):
+        a = "Mimea hutumia mwanga wa jua, maji na hewa kutengeneza chakula chao."
+        self.assertIsNone(degenerate(a, "swali"))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "model": "local-gguf/sha256-3121ebb0c9f34c4e",
+    "endpoint": "http://127.0.0.1:9337",
+    "data": "sw_seed.jsonl",
+    "at": "2026-11-25T06:41:42.720327+00:00",
+    "items": 10,
+    "errors": 0,
+    "keyword_pass_rate": 0.8,
+    "reviewed_items": 0,
+    "note": "keyword pass rate is a floor check, not a quality score",
+    "temperature": "0",
+    "max_tokens": 400
+  },
+  "results": [
+    {
+      "id": "sw-agri-001",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 6.14,
+      "answer": "Pole sana kwa changamoto hiyo. Kwanza, ni muhimu kutambua kuwa matundu kwenye majani yanaweza kusababishwa na wadudu kama vile viwavi au wadudu wa aina ya thrips.  Unaweza kutumia dawa ya wadudu au sabuni maalum ya kuua wadudu kwenye majani.  Pia, angalia ndani ya kitovu kwa wadudu wadogo; kama kuna wadudu, unaweza kutumia mitego ya wadudu au dawa ya wadudu.  Hakikisha unatumia dawa kwa usahihi na kufuata maelekezo ili kuepuka madhara kwa mimea na mazingira."
+    },
+    {
+      "id": "sw-agri-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 1.58,
+      "answer": "Ni wakati wa masika, kuanzia mwezi Machi hadi Mei, ambapo udongo una unyevu wa kutosha kwa mbegu kuota."
+    },
+    {
+      "id": "sw-health-001",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 4.24,
+      "answer": "Pole sana kwa changamoto hiyo. Dalili kuu ni kuhara, homa kali, na mtoto kushindwa kunywa maji au kula. Tafadhali mpeleke mtoto kwenye kituo cha afya kilicho karibu nawe haraka iwezekanavyo. Ikiwa hawezi kunywa maji, analegea sana, au anapata degedege, mpeleke hospitali ya dharura mara moja."
+    },
+    {
+      "id": "sw-health-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 1.95,
+      "answer": "Ili kuzuia mbu, tumia neti za mbu, futa maji yaliyotuama, na vaa nguo zinazofunika mwili."
+    },
+    {
+      "id": "sw-school-001",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 4.08,
+      "answer": "1. Mimea hutumia mwanga wa jua, maji, na hewa kutoa chakula.\n2. Mchakato huu unaitwa usanisinuru (photosynthesis).\n3. Mimea huchukua hewa ya ukaa (carbon dioxide) na kutoa oksijeni (oxygen)."
+    },
+    {
+      "id": "sw-school-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 3.72,
+      "answer": "1. Gharama ya sukari = 3 × 160 = 480 shilingi.\n2. Pesa iliyobaki = 1000 – 480 = 520 shilingi.\n\nShilingi 520."
+    },
+    {
+      "id": "sw-money-001",
+      "pass": false,
+      "degenerate": null,
+      "seconds": 4.59,
+      "answer": "1. Kwanza, tunahitaji kujua jumla ya michango ya kila mwanachama: 12 × 500 = 6000.\n2. Kisha, tunazidisha jumla hiyo kwa idadi ya wanachama: 6000 × 12 = 72000.\n\nShilingi 72000."
+    },
+    {
+      "id": "sw-money-002",
+      "pass": false,
+      "degenerate": null,
+      "seconds": 2.75,
+      "answer": "1. Anza kwa kuandika kila shilingi unayopata na kila shilingi unayotumia.\n2. Epuka kununua bidhaa zisizo na lazima.\n3. Jaribu kuweka kiasi kidogo cha pesa kila wiki kwenye akaunti ya benki."
+    },
+    {
+      "id": "sw-letter-001",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 3.93,
+      "answer": "Habari! Nimepata barua yako ya kazi ya mhudumu wa duka. Je, unaomba kazi ya mhudumu wa duka katika duka la vifaa vya ujenzi lililopo jijini Dar es Salaam? Tafadhali niandikie barua yako kwa ufupi na uhakikishe unajumuisha maelezo yote muhimu. Asante!"
+    },
+    {
+      "id": "sw-letter-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 1.14,
+      "answer": "Habari mwalimu, samahani kuwa mtoto wangu hatakuja shuleni leo kwa sababu anaumwa."
+    }
+  ]
+}

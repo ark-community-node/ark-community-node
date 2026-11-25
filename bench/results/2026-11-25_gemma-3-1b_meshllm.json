@@ -1,0 +1,99 @@
+{
+  "summary": {
+    "model": "local-gguf/sha256-a76252691b547724",
+    "endpoint": "http://127.0.0.1:9337",
+    "data": "sw_seed.jsonl",
+    "at": "2026-11-25T06:56:49.419092+00:00",
+    "temperature": "omit",
+    "max_tokens": 400,
+    "items": 10,
+    "errors": 0,
+    "keyword_pass_rate": 0.1,
+    "reviewed_items": 0,
+    "note": "keyword pass rate is a floor check, not a quality score",
+    "maintainer_read_correct": 0,
+    "maintainer_read_note": "Read by the maintainers (not native speakers). Provisional until native-speaker review."
+  },
+  "results": [
+    {
+      "id": "sw-agri-001",
+      "pass": false,
+      "degenerate": null,
+      "seconds": 3.1,
+      "answer": "Hiyo ni maswali ya ngunda fushumi ya nguvu ya Umoja, na ni isang masalimu ya ngunda ya Kichina. Tafadhali, ni mimi kunwa kwa mwanzo. Ndio nini ambayo unitafuta?",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-agri-002",
+      "pass": false,
+      "degenerate": "repetition loop",
+      "seconds": 11.68,
+      "answer": "Ni mtu mrefu sana, lakini mambo ya kupanda maharagwe katika eneo lenye mvua za masika ni ngumu sana. Ni mambo ya mrefu sana kwa sababu:\n\n*   **Mizinga ya mvua:** Maharagwe inaweza kuendishi kwa mvua za masika, na hii inaweza kuendishi mazingira yangu sana.\n*   **Mizinga ya uhai:** mvua za masika inaweza kuendishi mizinga ya uhai, na hii inaweza kuendishi mazingira yangu sana.\n*   **Mizinga ya uhaba:** mvua za masika inaweza kuendishi mizinga ya uhaba, na hii inaweza kuendishi mazingira yangu sana.\n\n**Mtu mrefu wa kupanda maharagwe katika eneo lenye mvua za masika inahitaji mambo mengi ya mazingira, na hii ni mambo yangu sana.**\n\n**Mambo ya kupanda maharagwe katika eneo lenye mvua za masika inahitaji mambo mengi ya mazingira, na hii ni mambo yangu sana.**\n\nMambo ya kupanda maharagwe katika eneo lenye mvua za masika ni nguruuki mrefu sana na ni nguruuki yangu sana.",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-health-001",
+      "pass": false,
+      "degenerate": "repetition loop",
+      "seconds": 18.05,
+      "answer": "Kwaheri ya mtoto wako ni kupoteza kutoka kwa mwezi mrefu, na ni mambo milimari sana. Hii inashirika kwa maadaisho ya mwezi mrefu na mafsidhi ya familia. Hii ni mambo mrefu hapa, na ni muhimu kufuatika na maumeri ya familia. Hii ni mambo ya kuwasha kwa mwezi mrefu, na ni mambo milimari sana. Hii ni mambo ya kuwasha kwa mwezi mrefu, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo milimari sana, na ni mambo milimari sana. Hii ni mambo",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-health-002",
+      "pass": false,
+      "degenerate": "repetition loop",
+      "seconds": 19.55,
+      "answer": "Nawezaje kuzuia mbu nyumbani ili kuepuka malaria ni mambo ya nguvu sana, lakini ni muhimu na usikivu na kuzika kwa klinika ya matumizi ya kulemi. Hii ni mambo ya kiwango, na ni muhimu kuwepo kwa maendeleo ya matumizi ya kulemi kwa maendeleo ya maalumba ya malaria.\n\n**Kufanya ni nini?**\n\n* **Kulemi ya Kuku:** Kulemi ya kuku ni aina ya kulemi ambayo ni nafuu ya mabadiliko ya mwangaza na ni muhimu kwa maendeleo ya malaria.\n* **Kulemi ya Kuku ya Kuku:** Kulemi ya kuku ya kuku ni aina ya kulemi ambayo ni nafuu ya mabadiliko ya mwangaza na ni muhimu kwa maendeleo ya malaria.\n* **Kulemi ya Kuku ya Mwanzi:** Kulemi ya kuku ya mwanzi ni aina ya kulemi ambayo ni nafuu ya mabadiliko ya mwangaza na ni muhimu kwa maendeleo ya malaria.\n\n**Kufunga na jukumu**\n\n* **Mwelekeza wa Malaria:** Kulemi ya kuku inaweza kuwasaidia kupungia malaria, na ni muhimu kwa maendeleo ya malaria.\n* **Kufunga kwa Mwanzi:** Kulemi ya kuku inaweza kuwasaidia kupungia malaria kwa mwanzi.\n\n**Penderegesha muhimu**\n\n* **Penderegesha kwa Clinika:** Unaweza kuongeza kulemi ya kuku kwa klinika ya matumizi ya malaria, na ni muhimu kuweka ugonjwa na mwelekeza kwa kulemi ya kuku.\n* **Kufunga kwa M",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-school-001",
+      "pass": false,
+      "degenerate": null,
+      "seconds": 7.07,
+      "answer": "Iha ugonisho wa kulemi wa mwanzo kwa mwanzi wa darasa la sita, na humo inaweza kuongeza maelezo za mabadiliko ya asipoli.\n\nHii ni ugonisho wa kulemi wa mwanzi wa darasa la sita kwa sentensi tatu:\n\n**\"Mwanzi wa darasa la sita huongekana kulemi wa mwanzo kwa ugonisho wa kulemi, na humo inaweza kuongeza maelezo ya mabadiliko ya asipoli.\"**\n\nIli uweze kuongeza maelezo zaidi, trenger ang magdohan ni pangalan ng ugonishi.",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-school-002",
+      "pass": false,
+      "degenerate": "wrong language",
+      "seconds": 3.32,
+      "answer": "Berikut adalah cara menghitung total biaya:\n\n*   Harga satu kilo sukari: Shilingi 160\n*   Jumlah kilo sukari yang dibeli: 3\n*   Total biaya: Shilingi 160 * 3 = Shilingi 480\n\nJadi, total biaya adalah shilingi 480.",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-money-001",
+      "pass": false,
+      "degenerate": null,
+      "seconds": 4.09,
+      "answer": "Okay, mari kita hitung.\n\n*   **Shilingi ilingawanda kwanza:** 12 wanachama\n*   **Shilingi iliyawanda leo:** 12 wanachama\n*   **Shilingi iliyawanda baada ya wiki 4:** 12 wanachama - 4 wanachama = 8 wanachama\n\nJadi, setelah wiki 4, akan ada 8 shilingi.",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-money-002",
+      "pass": false,
+      "degenerate": "repetition loop",
+      "seconds": 19.09,
+      "answer": "Hakika, tunafikiria kuweka akiba kwa mfanyabiashara mdogo sokoni kwa Vitatu (Nipezo). Hii ni mambo ya nguvu sana, na kuna vipuili vya nguvu sana vya kuweka akiba kwa mfanyabiashara mdogo sokoni. Hii ni maeleম:\n\n**1. Usimu wa Mhando & Mhando**\n\n*   **Mhando wa Mhando:** Vitatu (Nipezo) inaweza kuwasaidia kuweka mhando wa mhando ya mhando, na kuweka mhando wa mhando ya mhando kwa mwanzi.\n*   **Maji ya Usimu:** Tafuta urefu wa usimu, na uwezeshe kuweka mhando wa mhando wa mhando kwa mwanzi.\n*   **Mhando wa Mhando:**  Usimu wa mhando ya mhando wa mhando ni muhimu sana.\n*   **Mhando wa Mhando:**  Mhando wa mhando wa mhando ya mhando wa mhando inaweza kuongezeka kwa urefu wa usimu.\n\n**2.  Umpush wa Mhando & Mhando**\n\n*   **Mhando wa Mhando:**  Usimu wa mhando wa mhando ni muhimu sana.\n*   **Mhando wa Mhando:**  Mhando wa mhando wa mhando ni muhimu sana.\n*   **Mhando wa Mhando:**  Usimu wa mhando wa mhando ni muhimu sana.\n*   **Mhando wa Mhando:**  Mhando wa mhando wa mhando ni muhimu sana.\n\n**3.  Mhando & Mhando**\n\n*   **Mhando wa Mhando:**  Usimu wa mhando ni muhimu sana.\n*   **Mhando wa Mhando:**  M",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-letter-001",
+      "pass": false,
+      "degenerate": "repetition loop",
+      "seconds": 18.14,
+      "answer": "Hujambo!\n\nJina langu ni [Your Name]. Ninatoka wa Niandikie Barua Fupi, na ninaenda kwa mhandoji wa duka.\n\n**Mimi ni mgeni wa uhai wa [Your University/School] na ninaenda kwa uambizo ya [Job Title] katika [Company Name].**\n\n**Ninaenda kwa:**\n\n*   **Mhandoji wa Duka:** Ninaumilika kwa mhandoji wa duka kwa sababu ninaenda kuwasaidia kupata vyanzyo vimevumuliwa na kuwekuwa mhandoji wa kuwasaidia watafiti.\n*   **Mhandoji wa Duka:** Ninaenda kwa uambizo ya mhandoji wa duka kwa kuwasaidia watafiti na kuwasaidia kuwekuwa mhandoji wa kuwasaidia watafiti.\n\n**Ninaenda kwa:**\n\n*   **Mhandoji wa Duka:** Ninaenda kwa mhandoji wa duka kwa kuwasaidia watafiti na kuwasaidia kuwekuwa mhandoji wa kuwasaidia watafiti.\n*   **Mhandoji wa Duka:** Ninaenda kwa mhandoji wa duka kwa kuwasaidia watafiti.\n\n**Ninaenda kwa:**\n\n*   **Mhandoji wa Duka:** Ninaenda kwa mhandoji wa duka kwa kuwasaidia watafiti.\n\n**Ninaenda kwa:**\n\n*   **Mhandoji wa Duka:** Ninaenda kwa mhandoji wa duka kwa kuwasaidia watafiti.\n\n**Ninaenda kwa:**\n\n*   **Mhandoji wa Duka:** Ninaenda kwa mhandoji wa duka kwa kuwasaidia watafiti.",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    },
+    {
+      "id": "sw-letter-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 8.17,
+      "answer": "Hiyo, hii ni habari ya nguvu sana. Ndiyo, ndiyo, ndiyo, ndiyo! Unazungumza kwa jikani.\n\nNimefurahi sana na uamuzi langu kuenda kwenu. Kwangi, ni mbele ni mbele, ni mbele.\n\nNimefurahi sana na mgenia wangu, Andika, ujumbe wake. Mtu wake ni mgonjwa, na tunataka kuenda kwetu leo.\n\nNimefanya mambo ya muhimu, na ninaitwa kuenda kwetu.\n\nUnapenda sana. Mwanzi, ni mbele ni mbele na nitaendelea kuenda kwetu.",
+      "maintainer_read": "not usable: incoherent / wrong language / loops"
+    }
+  ]
+}

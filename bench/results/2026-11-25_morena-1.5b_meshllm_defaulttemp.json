@@ -1,0 +1,99 @@
+{
+  "summary": {
+    "model": "local-gguf/sha256-3121ebb0c9f34c4e",
+    "endpoint": "http://127.0.0.1:9337",
+    "data": "sw_seed.jsonl",
+    "at": "2026-11-25T06:57:24.580837+00:00",
+    "temperature": "omit",
+    "max_tokens": 400,
+    "items": 10,
+    "errors": 0,
+    "keyword_pass_rate": 0.8,
+    "reviewed_items": 0,
+    "note": "keyword pass rate is a floor check, not a quality score",
+    "maintainer_read_correct": 4,
+    "maintainer_read_note": "Read by the maintainers (not native speakers). Provisional until native-speaker review."
+  },
+  "results": [
+    {
+      "id": "sw-agri-001",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 4.51,
+      "answer": "Pole sana kwa hasara hiyo. Kwanza, ni muhimu kutambua kuwa matundu kwenye majani yanaweza kuwa ni dalili ya wadudu kama vile wadudu wa aina ya \"spider mites\" au \"aphids\". Ili kukabiliana na tatizo hili, unaweza kutumia sabuni ya maji au mafuta ya neem kuua wadudu hao, au kutumia maji ya kutosha kumwagilia mimea yako. Pia, hakikisha udongo una virutubisho vya kutosha na mimea inapata mwanga wa jua wa kutosha. Ikiwa tatizo litaendelea, unaweza kununua dawa za kuulia wadudu katika kituo cha bustani au duka la vifaa vya nyumbani karibu nawe.",
+      "maintainer_read": "partial: fluent, but names spider mites/aphids; maize leaf holes + insects in the whorl is classically fall armyworm"
+    },
+    {
+      "id": "sw-agri-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 1.26,
+      "answer": "Katika eneo lenye mvua za masika, ni wakati bora wa kupanda maharagwe ni mwezi wa Oktoba au Novemba.",
+      "maintainer_read": "plausible: Oct/Nov fits the short rains, but the prompt says masika (long rains, Mar-May), so the season is wrong"
+    },
+    {
+      "id": "sw-health-001",
+      "pass": false,
+      "degenerate": null,
+      "seconds": 3.05,
+      "answer": "Pole sana kwa hali ya mtoto wako. Dalili zinazohitaji uangalizi wa haraka ni pamoja na kuhara sana, kukosa choo kwa zaidi ya siku tatu, homa kali, au mtoto kuonekana mnyonge sana na asiyeruhusu chakula. Tafadhali mpeleke mtoto kwenye kituo cha afya kilicho karibu nawe haraka iwezekanavyo kwa uchunguzi na matibabu.",
+      "maintainer_read": "partial: correct urgency + go to clinic; lists 'no stool for 3 days', which makes no sense for diarrhoea"
+    },
+    {
+      "id": "sw-health-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 1.28,
+      "answer": "Tumia vyandarua vilivyotiwa dawa, lala ndani ya nyumba zilizotiwa dawa, na futa maji yaliyotuama karibu na nyumba yako.",
+      "maintainer_read": "correct: treated nets, indoor spraying, drain standing water"
+    },
+    {
+      "id": "sw-school-001",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 2.38,
+      "answer": "1. Mimea hutumia nishati ya jua kutengeneza chakula.\n2. Mimea hutumia kaboni dioksidi kutoka angani na maji kutoka mizizi yake.\n3. Mchakato huu unazalisha glukosi (glucose) na oksijeni (oxygen) kama bidhaa.",
+      "maintainer_read": "correct"
+    },
+    {
+      "id": "sw-school-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 2.73,
+      "answer": "1. Nunua kilo 3 za sukari, jumla ya kilo = 3 × 160 = 480 shilingi.\n2. Ongeza gharama ya pakiti ya sabuni: 480 + 160 = 640 shilingi.\n\nShilingi 640.",
+      "maintainer_read": "wrong: computes 480 then invents a soap purchase, final answer 640"
+    },
+    {
+      "id": "sw-money-001",
+      "pass": false,
+      "degenerate": null,
+      "seconds": 2.63,
+      "answer": "Hatua ya 1: Hesabu kiasi cha jumla cha michango: 12 × 500 = 6000. Hatua ya 2: Ongeza kiasi cha wiki ya kwanza kwenye jumla: 6000 + 2000 = 8000.",
+      "maintainer_read": "wrong: final answer 8,000 (correct 24,000)"
+    },
+    {
+      "id": "sw-money-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 1.56,
+      "answer": "Kwanza, andaa bajeti ya kila mwezi na ushike. Pili, toa bajeti ya mahitaji muhimu pekee. Tatu, jaribu kuweka kiasi kidogo cha pesa kando kila mwezi.",
+      "maintainer_read": "correct"
+    },
+    {
+      "id": "sw-letter-001",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 0.76,
+      "answer": "Habari, habari! Kazi ya mhudumu wa duka ipo. Una sifa gani?",
+      "maintainer_read": "wrong task: replies as the employer instead of writing the application letter"
+    },
+    {
+      "id": "sw-letter-002",
+      "pass": true,
+      "degenerate": null,
+      "seconds": 1.06,
+      "answer": "Habari mwalimu, samahani sana kwa usumbufu. Mtoto wangu hatakuja shuleni leo kwa sababu anaumwa. Asante.",
+      "maintainer_read": "correct"
+    }
+  ]
+}

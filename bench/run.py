@@ -9,8 +9,10 @@ def load(path):
         return [json.loads(l) for l in f if l.strip()]
 
 
-def ask(endpoint, model, prompt, timeout, max_tokens=1500):
-    body = {"messages": [{"role": "user", "content": prompt}], "max_tokens": max_tokens, "temperature": 0}
+def ask(endpoint, model, prompt, timeout, max_tokens=1500, temperature=0.0):
+    body = {"messages": [{"role": "user", "content": prompt}], "max_tokens": max_tokens}
+    if temperature is not None:
+        body["temperature"] = temperature
     if model:
         body["model"] = model
     req = urllib.request.Request(endpoint.rstrip("/") + "/v1/chat/completions",
@@ -35,6 +37,11 @@ def degenerate(answer, prompt):
         top = max(grams.count(g) for g in set(grams))
         if top >= 4:
             return "repetition loop"
+    # Wrong-language drift seen in practice (Gemma 3 1B slid into Indonesian/Tagalog on Swahili prompts).
+    foreign = {"berikut", "adalah", "yang", "dibeli", "harga", "isang", "ng mga", "mari kita"}
+    low = " " + answer.lower() + " "
+    if sum(1 for w in foreign if f" {w} " in low) >= 2:
+        return "wrong language"
     p = prompt.lower().strip(" ?.!")
     if len(p) > 20 and p[:40] in answer.lower():
         return "echoes the prompt"
@@ -57,6 +64,7 @@ def main(argv=None):
     p.add_argument("--out", required=True)
     p.add_argument("--timeout", type=float, default=180)
     p.add_argument("--max-tokens", type=int, default=1500)
+    p.add_argument("--temperature", default="0", help="number, or 'omit' to use the server default")
     p.add_argument("--reviewed-only", action="store_true", help="skip items without native-speaker review")
     a = p.parse_args(argv)
     items = load(a.data)
@@ -65,7 +73,7 @@ def main(argv=None):
     rows = []
     for it in items:
         try:
-            ans, secs = ask(a.endpoint, a.model, it["prompt"], a.timeout, a.max_tokens)
+            ans, secs = ask(a.endpoint, a.model, it["prompt"], a.timeout, a.max_tokens, None if a.temperature == "omit" else float(a.temperature))
             rows.append({"id": it["id"], "pass": check(ans, it), "degenerate": degenerate(ans, it["prompt"]), "seconds": round(secs, 2), "answer": ans})
         except Exception as e:  # keep going; record failure
             rows.append({"id": it["id"], "pass": False, "error": str(e)})
@@ -74,7 +82,7 @@ def main(argv=None):
     summary = {
         "model": a.model, "endpoint": a.endpoint, "data": os.path.basename(a.data),
         "at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "items": len(rows), "errors": sum(1 for r in rows if "error" in r), "keyword_pass_rate": round(sum(1 for r in scored if r["pass"]) / len(scored), 3) if scored else None,
+        "temperature": a.temperature, "max_tokens": a.max_tokens, "items": len(rows), "errors": sum(1 for r in rows if "error" in r), "keyword_pass_rate": round(sum(1 for r in scored if r["pass"]) / len(scored), 3) if scored else None,
         "reviewed_items": sum(1 for i in items if i.get("reviewed_by")),
         "note": "keyword pass rate is a floor check, not a quality score",
     }
